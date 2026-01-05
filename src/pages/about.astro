@@ -1,0 +1,36 @@
+---
+/**
+ * This top block is called "frontmatter".
+ * It runs on the server at build time.
+ * You can write TypeScript here.
+ */
+const name: string = "Monja van Eeden";
+const focusAreas: string[] = ["C++/Qt", "embedded systems", "hardware/software integration"];
+const funFact: string = "I like building things that talk to real devices.";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About — {name}</title>
+  </head>
+
+  <body style="font-family: system-ui; padding: 2rem; line-height: 1.5;">
+    <a href="/">← Home</a>
+
+    <h1>About</h1>
+
+    <p>Hi, I’m <strong>{name}</strong>.</p>
+
+    <p>
+      I’m a Computer Science student focused on:
+    </p>
+
+    <ul>
+      {focusAreas.map((item) => <li>{item}</li>)}
+    </ul>
+
+    <p>{funFact}</p>
+  </body>
+</html>
