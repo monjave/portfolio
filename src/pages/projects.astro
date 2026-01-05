@@ -1,0 +1,42 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+
+type Project = {
+  title: string;
+  description: string;
+  tech: string[];
+  href?: string;
+};
+
+const projects: Project[] = [
+  {
+    title: "Sickest Car Dash",
+    description: "C++/Qt digital dashboard that reads live OBD-II telemetry via ELM327 and renders real-time gauges.",
+    tech: ["C++", "Qt 6", "QSerialPort", "QtTest", "ELM327", "OBD-II"],
+    // TODO
+    href: "/projects/sickest-car-dash",
+  },
+  {
+    title: "Heart LED Turn Signals",
+    description: "Custom heart-shaped LED turn signal system built with Arduino and animated light patterns.",
+    tech: ["Arduino", "C/C++", "LEDs", "Basic electronics", "Prototyping"],
+    // TODO
+    href: "/projects/heart-turn-signals",
+  },
+];
+---
+
+<BaseLayout title="Projects">
+  <h1>Projects</h1>
+  <p>Selected work (more coming soon).</p>
+
+  {projects.map((p) => (
+    <ProjectCard
+      title={p.title}
+      description={p.description}
+      tech={p.tech}
+      href={p.href}
+    />
+  ))}
+</BaseLayout>
