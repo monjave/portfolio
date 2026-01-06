@@ -34,7 +34,7 @@ body::after {
 a {
   color: var(--ink);
   text-decoration: none;
-  border-bottom: 1px solid var(--rule);
+  border-bottom: none;
 }
 
 a:hover {
