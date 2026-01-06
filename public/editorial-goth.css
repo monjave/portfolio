@@ -4,8 +4,8 @@
 :root {
   --bg: #0b0b0c;
   --panel: #0f0f12;
-  --ink: #f2f2f2;
-  --muted: #b6b6b6;
+  --ink: #a296b0;
+  --muted: #c1b9d0;
   --rule: rgba(255,255,255,.15);
 }
 
@@ -17,6 +17,18 @@ html, body {
   color: var(--ink);
   font-family: "Tagesschrift", system-ui;
   line-height: 1.65;
+}
+/* subtle grain overlay */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(rgba(255,255,255,0.06) 5px, transparent 5px);
+  background-size: 10px 10px;
+  opacity: 0.12;
+  mix-blend-mode: screen;
 }
 
 a {
@@ -46,6 +58,27 @@ a:hover {
   margin: 0;
   letter-spacing: 1px;
 }
+.site-title {
+  position: relative;
+  text-shadow:
+    0 0 8px rgba(230,220,255,0.25),
+    0 0 18px rgba(200,180,255,0.15);
+}
+
+.site-title::before {
+  content: "✨ ";
+  font-size: 0.6em;
+  vertical-align: super;
+  opacity: 0.6;
+}
+.site-title::after {
+  content: " ✨";
+  font-size: 0.6em;
+  vertical-align: sub;
+  opacity: 0.6;
+}
+
+
 
 .site-sub {
   color: var(--muted);
@@ -60,12 +93,28 @@ a:hover {
   font-size: 1.8rem;
 }
 
+.nav a{
+  opacity: 0.85;
+}
+
+.nav a.active {
+  opacity: 0.9;
+  text-shadow:
+    0 0 6px rgba(200, 180, 255, 0.4),
+    0 0 14px rgba(200, 180, 255, 0.25);
+}
+
 /* Panels */
 .panel {
   background: var(--panel);
   padding: 32px;
   margin-bottom: 48px;
   border-top: 1px solid var(--rule);
+  max-width: 1080px;
+}
+
+p {
+  margin-bottom: 2em;
 }
 
 /* Headings */
@@ -85,9 +134,14 @@ h2 {
 
 /* Dividers */
 .divider {
+  height: 1px;
   margin: 32px 0;
-  border: none;
-  border-top: 1px solid var(--rule);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(200,200,255,0.4),
+    transparent
+  );
 }
 
 /* Images */
