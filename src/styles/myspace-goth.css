@@ -1,0 +1,189 @@
+/* ===== Early 2000s Goth MySpace Theme ===== */
+:root{
+  --bg: #050508;
+  --panel: rgba(10, 10, 16, 0.86);
+  --panel-border: rgba(170, 0, 255, 0.55);
+  --text: #f2ecff;
+  --muted: #c6b6e6;
+  --accent: #b400ff;      /* purple neon */
+  --accent2: #00ffd5;     /* cyan glow */
+  --hot: #ff2bd6;         /* pink glow */
+}
+
+* { box-sizing: border-box; }
+
+html, body { height: 100%; }
+
+body {
+  margin: 0;
+  color: var(--text);
+  background:
+    radial-gradient(1200px 700px at 20% 0%, rgba(180,0,255,.22), transparent 60%),
+    radial-gradient(900px 600px at 80% 10%, rgba(0,255,213,.14), transparent 55%),
+    radial-gradient(800px 700px at 50% 100%, rgba(255,43,214,.10), transparent 60%),
+    linear-gradient(180deg, #050508 0%, #06040b 40%, #040008 100%);
+  font-family: "Trebuchet MS", "Verdana", "Tahoma", system-ui, sans-serif;
+  letter-spacing: 0.2px;
+}
+
+/* “sparkle noise” overlay without images */
+body::before{
+  content:"";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(rgba(255,255,255,.06) 1px, transparent 1px);
+  background-size: 3px 3px;
+  opacity: .18;
+  mix-blend-mode: screen;
+}
+
+/* Layout wrapper */
+.ms-wrap{
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 22px 14px 60px;
+}
+
+/* Top banner */
+.ms-banner{
+  background: linear-gradient(90deg, rgba(180,0,255,.25), rgba(0,255,213,.10), rgba(255,43,214,.12));
+  border: 1px solid rgba(180,0,255,.55);
+  border-radius: 18px;
+  padding: 16px 16px 12px;
+  box-shadow:
+    0 0 18px rgba(180,0,255,.22),
+    0 0 28px rgba(0,255,213,.12);
+  position: relative;
+  overflow: hidden;
+}
+
+.ms-banner::after{
+  content:"";
+  position:absolute;
+  inset:-40px -80px;
+  background: repeating-linear-gradient(
+    135deg,
+    rgba(255,255,255,.06) 0px,
+    rgba(255,255,255,.06) 6px,
+    transparent 6px,
+    transparent 18px
+  );
+  opacity:.16;
+  transform: rotate(2deg);
+}
+
+.ms-title{
+  position: relative;
+  margin: 0;
+  font-size: 34px;
+  letter-spacing: 1px;
+  text-shadow:
+    0 0 8px rgba(180,0,255,.65),
+    0 0 16px rgba(0,255,213,.35);
+}
+
+.ms-sub{
+  position: relative;
+  margin: 6px 0 0;
+  color: var(--muted);
+  text-shadow: 0 0 10px rgba(180,0,255,.25);
+}
+
+/* Nav pills */
+.ms-nav{
+  position: relative;
+  margin-top: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.ms-nav a{
+  color: var(--text);
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(180,0,255,.50);
+  background: rgba(10,10,16,.55);
+  box-shadow: 0 0 10px rgba(180,0,255,.18);
+  transition: transform .08s ease, box-shadow .2s ease, border-color .2s ease;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.ms-nav a:hover{
+  transform: translateY(-1px);
+  border-color: rgba(0,255,213,.55);
+  box-shadow:
+    0 0 14px rgba(0,255,213,.18),
+    0 0 18px rgba(180,0,255,.22);
+}
+
+/* The “MySpace boxes” */
+.ms-panel{
+  margin-top: 18px;
+  background: var(--panel);
+  border: 1px solid rgba(180,0,255,.45);
+  border-radius: 18px;
+  padding: 16px;
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,.05) inset,
+    0 0 24px rgba(180,0,255,.14);
+}
+
+.ms-panel h1, .ms-panel h2, .ms-panel h3{
+  margin: 0 0 10px;
+  letter-spacing: .6px;
+  text-shadow:
+    0 0 10px rgba(180,0,255,.35),
+    0 0 18px rgba(0,255,213,.16);
+}
+
+.ms-panel p{ color: var(--text); }
+.ms-panel .muted{ color: var(--muted); }
+
+/* Links inside content */
+a{
+  color: var(--accent2);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+a:hover{
+  color: var(--hot);
+  text-shadow: 0 0 10px rgba(255,43,214,.35);
+}
+
+/* “status bar” */
+.ms-status{
+  margin-top: 12px;
+  padding: 10px 12px;
+  border-radius: 14px;
+  border: 1px dashed rgba(255,43,214,.50);
+  background: rgba(0,0,0,.35);
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.ms-divider{
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(180,0,255,.55), transparent);
+  margin: 14px 0;
+}
+
+/* Optional: very subtle “blink” for tiny accents */
+.ms-blink{
+  animation: msBlink 1.2s steps(2, end) infinite;
+}
+@keyframes msBlink{
+  50%{ opacity: .25; }
+}
+
+/* Reduce motion support */
+@media (prefers-reduced-motion: reduce){
+  .ms-blink{ animation: none; }
+  .ms-nav a{ transition: none; }
+}
