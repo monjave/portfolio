@@ -1,0 +1,74 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+type Link = { label: string; href: string };
+
+const title = "Heart LED Turn Signals";
+const subtitle = "Custom heart-shaped LED turn signal system using Arduino and animated light patterns.";
+
+const tech: string[] = ["Arduino", "C/C++", "LED wiring", "Prototyping", "Power considerations"];
+
+const links: Link[] = [
+  // not in github yet, just arduino code
+  { label: "GitHub Repo", href: "#" },
+  { label: "Video / Photos", href: "#" },
+];
+
+const bullets = {
+  whatIBuilt: [
+    "A heart-shaped turn signal display with a recognizable animation pattern.",
+    "Control logic for blink timing and animation sequencing.",
+  ],
+  whatIDid: [
+    "Mapped LED layout to code (which LEDs light up in which order).",
+    "Iterated on wiring + timing to make the pattern clean and reliable.",
+    "Validated that the effect reads clearly as a turn signal (visibility + rhythm).",
+  ],
+  challenges: [
+    "Getting animations smooth without flicker.",
+    "Making the wiring stable and avoiding power issues.",
+    "Balancing aesthetics with legibility (cool pattern, still obvious signal).",
+  ],
+  outcome: [
+    "Working prototype demonstrating embedded control + user-facing UX.",
+    "Great portfolio example of hardware iteration and creative engineering.",
+  ],
+};
+---
+
+<BaseLayout title={`${title} — Project`}>
+  <a href="/projects">← Back to Projects</a>
+
+  <h1>{title}</h1>
+  <p>{subtitle}</p>
+
+  <h2>Tech</h2>
+  <ul>
+    {tech.map((t) => <li>{t}</li>)}
+  </ul>
+
+  <h2>Links</h2>
+  <ul>
+    {links.map((l) => <li><a href={l.href}>{l.label}</a></li>)}
+  </ul>
+
+  <h2>What I built</h2>
+  <ul>
+    {bullets.whatIBuilt.map((b) => <li>{b}</li>)}
+  </ul>
+
+  <h2>My role</h2>
+  <ul>
+    {bullets.whatIDid.map((b) => <li>{b}</li>)}
+  </ul>
+
+  <h2>Challenges</h2>
+  <ul>
+    {bullets.challenges.map((b) => <li>{b}</li>)}
+  </ul>
+
+  <h2>Outcome</h2>
+  <ul>
+    {bullets.outcome.map((b) => <li>{b}</li>)}
+  </ul>
+</BaseLayout>
