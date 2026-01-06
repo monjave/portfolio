@@ -1,19 +1,29 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-
-const name = "Mo van Eeden";
-const focusAreas = ["C++/Qt", "embedded systems", "hardware/software integration"];
 ---
 
 <BaseLayout title="About">
   <h1>About</h1>
 
-  <p>Hi, I’m <strong>{name}</strong>.</p>
+  <p>
+    I’m a programmer with experience in C++ and Qt, as well as Python and Java, and a strong interest
+    in building software that interacts with real systems. My background includes projects that
+    combine application development with hardware integration, serial communication, and testing.
+  </p>
 
-  <p>I’m a Computer Science student focused on:</p>
+  <hr class="divider" />
 
-  <ul>
-    {focusAreas.map((item) => <li>{item}</li>)}
-  </ul>
+  <p>
+    I’m particularly interested in work that emphasizes understanding how systems behave in practice.
+    I enjoy projects where I can dig into how components interact, reason about failures, and design
+    solutions that are both reliable and maintainable.
+  </p>
+
+  <hr class="divider" />
+
+  <p>
+    I’m currently focused on continuing to build my skills through hands-on projects and collaborative
+    work, with the goal of contributing to teams that value thoughtful engineering and well-designed
+    systems.
+  </p>
 </BaseLayout>
-
