@@ -3,18 +3,26 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout title="Home">
-  <p>
-    I build software that interfaces with real systems, with a focus on
-    reliability, clarity, and understanding how things behave in practice.
-  </p>
+  
+  <div class="home-intro">
+    
+    <img
+        src="/images/mve.jpg"
+        alt="Portrait of Mo van Eeden"
+        class="home-portrait"
+    />
 
-  <img
-    src="/images/mve.jpg"
-    alt="Portrait of Mo van Eeden"
-    class="home-portrait"
-  />
+    <div class="home-blurb">
+        <h2 class="home-welcome">❊ Welcome ❊</h2>
 
-  <h2>Engineering Work</h2>
+        <p>
+            I build software that interfaces with real systems, with a focus on
+            reliability, clarity, and understanding how things behave in practice.
+        </p>
+    </div>
+  </div>
+
+  <h2>》Engineering Work《</h2>
 
   <p>
     Projects focused on hardware-connected software
