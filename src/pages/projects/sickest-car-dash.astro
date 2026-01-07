@@ -1,0 +1,70 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+type Link = { label: string; href: string };
+
+const title = "Sickest Car Dash";
+const subtitle = "C++/Qt digital dashboard that reads live OBD-II telemetry via ELM327 and renders real-time gauges.";
+
+const tech: string[] = ["C++", "Qt 6", "QSerialPort", "QtTest", "ELM327 (USB)", "OBD-II PIDs", "CI"];
+
+const links: Link[] = [
+  // github is private
+  { label: "GitHub Repo", href: "#" },
+  { label: "Demo Video", href: "#" },
+];
+
+const bullets = {
+  whatIBuilt: [
+    "Real-time vehicle telemetry dashboard (speed, RPM, coolant temp) using OBD-II queries.",
+    "Serial communication layer for ELM327 with command/response parsing.",
+    "Polling loop to request PIDs on a schedule and feed the UI.",
+  ],
+  whatIDid: [
+    "Integrated the USB ELM327 workflow for MVP stability and consistent CI testing.",
+    "Wrote QtTest unit/integration tests using a custom Mock QSerialPort.",
+    "Helped design UI graphics and ensured data decoding matched expected units.",
+  ],
+  challenges: [
+    "Making serial communication reliable (timeouts, partial responses, noisy data).",
+    "Ensuring tests were deterministic for CI (mocking, fixed responses, controlled timing).",
+    "Working around limited telemetry availability without Mode 22 manufacturer PIDs.",
+  ],
+  outcome: [
+    "Delivered a working MVP with live gauges.",
+    "Set up a modular architecture designed for adding more sensors/telemetry later.",
+  ],
+};
+---
+
+<BaseLayout title={`${title} — Project`}>
+  <a href="/projects">← Back to Projects</a>
+
+  <h1>{title}</h1>
+  <p>{subtitle}</p>
+
+  <h2>Tech</h2>
+  <ul>
+    {tech.map((t) => <li>{t}</li>)}
+  </ul>
+
+  <h2>What I built</h2>
+  <ul>
+    {bullets.whatIBuilt.map((b) => <li>{b}</li>)}
+  </ul>
+
+  <h2>My role</h2>
+  <ul>
+    {bullets.whatIDid.map((b) => <li>{b}</li>)}
+  </ul>
+
+  <h2>Challenges</h2>
+  <ul>
+    {bullets.challenges.map((b) => <li>{b}</li>)}
+  </ul>
+
+  <h2>Outcome</h2>
+  <ul>
+    {bullets.outcome.map((b) => <li>{b}</li>)}
+  </ul>
+</BaseLayout>

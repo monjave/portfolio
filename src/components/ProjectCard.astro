@@ -1,0 +1,22 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  tech: string[];
+  href?: string;
+}
+
+const { title, description, tech, href } = Astro.props;
+---
+
+<article style="border: 1px solid #ddd; padding: 1rem; border-radius: 12px; margin-bottom: 1rem;">
+  <h2 style="margin: 0 0 0.5rem 0;">
+    {href ? <a href={href}>{title}</a> : title}
+  </h2>
+
+  <p style="margin: 0 0 0.75rem 0;">{description}</p>
+
+  <ul style="margin: 0; padding-left: 1.25rem;">
+    {tech.map((t) => <li>{t}</li>)}
+  </ul>
+</article>
