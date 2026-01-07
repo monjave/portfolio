@@ -15,17 +15,16 @@ const projects: Project[] = [
     description: "C++/Qt digital dashboard that reads live OBD-II telemetry via ELM327 and renders real-time gauges.",
     tech: ["C++", "Qt 6", "QSerialPort", "QtTest", "ELM327", "OBD-II"],
     // TODO
-    href: "/projects/sickest-car-dash",
+    href: `${import.meta.env.BASE_URL}projects/sickest-car-dash`,
   },
   {
     title: "Heart LED Turn Signals",
     description: "Custom heart-shaped LED turn signal system built with Arduino and animated light patterns.",
     tech: ["Arduino", "C/C++", "LEDs", "Basic electronics", "Prototyping"],
     // TODO
-    href: "/projects/heart-turn-signals",
+    href: `${import.meta.env.BASE_URL}projects/heart-turn-signals`,
   },
 ];
----
 
 <BaseLayout title="Projects">
   <h1>Projects</h1>

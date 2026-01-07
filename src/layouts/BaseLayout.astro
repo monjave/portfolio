@@ -14,7 +14,7 @@ const currentPath = Astro.url.pathname;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
-    <link rel="stylesheet" href={`${base}editorial-goth.css`} />
+    <link rel="stylesheet" href={`${base}/editorial-goth.css`} />
   </head>
 
   <body>
@@ -24,26 +24,26 @@ const currentPath = Astro.url.pathname;
         <p class="site-sub">hardware-connected software · embedded systems</p>
 
         <nav class="nav">
-          <a href={base} class={currentPath === base ? "active" : ""}>
+          <a href={`${base}/`} class={currentPath === `${base}/` ? "active" : ""}>
             ✦Home✦
           </a>
 
           <a
-            href={`${base}projects`}
-            class={currentPath.startsWith(`${base}projects`) ? "active" : ""}
+            href={`${base}/projects`}
+            class={currentPath.startsWith(`${base}/projects`) ? "active" : ""}
           >
             ❃Projects❃
           </a>
 
           <a
-            href={`${base}about`}
-            class={currentPath === `${base}about` ? "active" : ""}
+            href={`${base}/about`}
+            class={currentPath === `${base}/about` ? "active" : ""}
           >
             ✯About✯
           </a>
 
           <a
-            href={`${base}Monja_van_Eeden_Resume.pdf`}
+            href={`${base}/Monja_van_Eeden_Resume.pdf`}
             target="_blank"
             rel="noopener"
           >
