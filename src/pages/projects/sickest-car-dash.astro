@@ -9,9 +9,7 @@ const subtitle = "C++/Qt digital dashboard that reads live OBD-II telemetry via 
 const tech: string[] = ["C++", "Qt 6", "QSerialPort", "QtTest", "ELM327 (USB)", "OBD-II PIDs", "CI"];
 
 const links: Link[] = [
-  // github is private
-  { label: "GitHub Repo", href: "#" },
-  { label: "Demo Video", href: "#" },
+  { label: "GitHub Repo", href: "https://github.com/monjave/SickestCarDash" },
 ];
 
 const bullets = {
@@ -46,6 +44,11 @@ const bullets = {
   <h2>Tech</h2>
   <ul>
     {tech.map((t) => <li>{t}</li>)}
+  </ul>
+
+  <h2>Links</h2>
+  <ul>
+    {links.map((l) => <li><a href={l.href}>{l.label}</a></li>)}
   </ul>
 
   <h2>What I built</h2>
