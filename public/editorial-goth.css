@@ -166,6 +166,16 @@ img {
   filter: grayscale(100%);
 }
 
+/* Pdf embeds */
+.pdf-embed {
+  width: 100%;
+  height: 85vh;
+  border: none;
+  margin-top: 32px;
+  box-shadow: 0 0 30px rgba(200, 180, 255, 0.08);
+}
+
+
 /* home page */
 .home-intro {
   display: flex;
