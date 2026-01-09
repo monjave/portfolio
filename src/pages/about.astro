@@ -6,6 +6,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   <h1>About</h1>
 
   <p>
+    My name is Monja van Eeden, but I go by Mo. I am currently based in the Greater Seatle area.
+  </p>
+
+  <p>
     I’m a programmer with experience in C++ and Qt, as well as Python and Java, and a strong interest
     in building software that interacts with real systems. My background includes projects that
     combine application development with hardware integration, serial communication, and testing.
@@ -21,5 +25,21 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     I’m currently focused on continuing to build my skills through hands-on projects and collaborative
     work, with the goal of contributing to teams that value thoughtful engineering and well-designed
     systems.
+  </p>
+
+  <h1>Resume</h1>
+  <p>
+    You can view or download my resume
+    <a href={`${import.meta.env.BASE_URL}/Monja_van_Eeden_Resume.pdf`} 
+    target="_blank" 
+    rel="noopener">
+      here
+    </a>
+    
+    <iframe
+    src={`${import.meta.env.BASE_URL}Monja_van_Eeden_Resume.pdf`}
+    class="pdf-embed"
+    title="Monja van Eeden Resume"
+    ></iframe>
   </p>
 </BaseLayout>
