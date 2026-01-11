@@ -163,7 +163,6 @@ img {
   max-width: 100%;
   display: block;
   margin: 24px 0;
-  filter: grayscale(100%);
 }
 
 /* Pdf embeds */

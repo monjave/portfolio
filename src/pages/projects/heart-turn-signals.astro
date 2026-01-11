@@ -9,9 +9,7 @@ const subtitle = "Custom heart-shaped LED turn signal system using Arduino and a
 const tech: string[] = ["Arduino", "C/C++", "LED wiring", "Prototyping", "Power considerations"];
 
 const links: Link[] = [
-  // not in github yet, just arduino code
-  { label: "GitHub Repo", href: "#" },
-  { label: "Video / Photos", href: "#" },
+  { label: "GitHub Repo", href: "https://github.com/monjave/HeartLEDTurnSignals" },
 ];
 
 const bullets = {
@@ -71,4 +69,25 @@ const bullets = {
   <ul>
     {bullets.outcome.map((b) => <li>{b}</li>)}
   </ul>
+
+  <h2>Prototype Photos</h2>
+
+  <img
+    src={`${import.meta.env.BASE_URL}/images/FullBreadBoardLayout.jpeg`}
+    alt="Photo of the heart-shaped LED turn signal prototype mounted on a board."
+    class="project-image"
+  />
+
+  <img
+    src={`${import.meta.env.BASE_URL}/images/LeftCloseUp.jpeg`}
+    alt="Photo of the left side of the heart-shaped LED turn signal prototype."
+    class="project-image"
+  />
+
+  <img
+    src={`${import.meta.env.BASE_URL}/images/RightCloseUp.jpeg`}
+    alt="Photo of the right side of the heart-shaped LED turn signal prototype."
+    class="project-image"
+  />
+  
 </BaseLayout>
