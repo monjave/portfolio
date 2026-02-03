@@ -49,6 +49,14 @@ const currentPath = Astro.url.pathname;
           >
             𓇬GitHub𓇬
           </a>
+
+          <a
+            href={`${base}/about`}
+            class={currentPath === `${base}/research` ? "active" : ""}
+          >
+            ✿Research✿
+          </a>
+
         </nav>
       </header>
 
